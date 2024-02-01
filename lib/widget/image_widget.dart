@@ -11,24 +11,20 @@ class ImageWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey.withOpacity(0.3),
-                blurRadius: 0.2,
-                offset: const Offset(0, 0))
-          ],
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: FadeInImage.memoryNetwork(
-              placeholder: kTransparentImage,
-              image: photo.src!.medium!,
-            ).image,
-          )),
-      child: FadeInImage.memoryNetwork(
-        placeholder: kTransparentImage,
-        image: photo.src!.medium!,
-        fit: BoxFit.cover,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              blurRadius: 0.4,
+              offset: const Offset(0, 0))
+        ],
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: FadeInImage.memoryNetwork(
+            placeholder: kTransparentImage,
+            image: photo.src!.portrait!,
+          ).image,
+        ),
       ),
     );
   }

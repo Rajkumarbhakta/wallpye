@@ -49,7 +49,10 @@ class _ImageGridState extends State<ImageGrid> {
           itemBuilder: (context, item, index) => ImageWidget(item),
         ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, mainAxisSpacing: 4, crossAxisSpacing: 8),
+            crossAxisCount: 2,
+            mainAxisSpacing: 3,
+            crossAxisSpacing: 4,
+            childAspectRatio: 0.6),
       ),
     );
   }

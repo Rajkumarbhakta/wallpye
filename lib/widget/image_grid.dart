@@ -41,12 +41,16 @@ class _ImageGridState extends State<ImageGrid> {
 
   @override
   Widget build(BuildContext context) {
-    return PagedGridView(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: PagedGridView(
         pagingController: _pagingController,
         builderDelegate: PagedChildBuilderDelegate<Photos>(
           itemBuilder: (context, item, index) => ImageWidget(item),
         ),
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2));
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisSpacing: 4, crossAxisSpacing: 8),
+      ),
+    );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wallpye/widget/app_bar_tittle.dart';
+import 'package:wallpye/widget/image_grid.dart';
 import 'package:wallpye/widget/search_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,7 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
   void onSearch() {
     if (_queryController.text.isEmpty) {
       Fluttertoast.showToast(
-          msg: "Type something.",);
+        msg: "Type something.",
+      );
     } else {
       Fluttertoast.showToast(msg: _queryController.text);
     }
@@ -33,7 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
             onSearch: onSearch,
             queryController: _queryController,
           ),
-          
+          const Expanded(
+            child: ImageGrid(),
+          ),
         ],
       ),
     );

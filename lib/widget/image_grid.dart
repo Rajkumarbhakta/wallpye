@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:wallpye/data/remote.dart';
 import 'package:wallpye/models/photos.dart';
+import 'package:wallpye/screens/image_preview_screen.dart';
 import 'package:wallpye/widget/image_widget.dart';
 
 class ImageGrid extends StatefulWidget {
@@ -46,7 +47,12 @@ class _ImageGridState extends State<ImageGrid> {
       child: PagedGridView(
         pagingController: _pagingController,
         builderDelegate: PagedChildBuilderDelegate<Photos>(
-          itemBuilder: (context, item, index) => ImageWidget(item),
+          itemBuilder: (context, item, index) => ImageWidget(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ImagePreviewScreen(item)));
+            },
+            photo: item,
+          ),
         ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,

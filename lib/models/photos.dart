@@ -35,26 +35,26 @@ class Photos {
     photographerUrl = json['photographer_url'];
     photographerId = json['photographer_id'];
     avgColor = json['avg_color'];
-    src = json['src'] != null ? new Src.fromJson(json['src']) : null;
+    src = json['src'] != null ? Src.fromJson(json['src']) : null;
     liked = json['liked'];
     alt = json['alt'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['width'] = this.width;
-    data['height'] = this.height;
-    data['url'] = this.url;
-    data['photographer'] = this.photographer;
-    data['photographer_url'] = this.photographerUrl;
-    data['photographer_id'] = this.photographerId;
-    data['avg_color'] = this.avgColor;
-    if (this.src != null) {
-      data['src'] = this.src!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['width'] = width;
+    data['height'] = height;
+    data['url'] = url;
+    data['photographer'] = photographer;
+    data['photographer_url'] = photographerUrl;
+    data['photographer_id'] = photographerId;
+    data['avg_color'] = avgColor;
+    if (src != null) {
+      data['src'] = src!.toJson();
     }
-    data['liked'] = this.liked;
-    data['alt'] = this.alt;
+    data['liked'] = liked;
+    data['alt'] = alt;
     return data;
   }
 }

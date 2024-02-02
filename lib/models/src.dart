@@ -30,15 +30,15 @@ class Src {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['original'] = this.original;
-    data['large2x'] = this.large2x;
-    data['large'] = this.large;
-    data['medium'] = this.medium;
-    data['small'] = this.small;
-    data['portrait'] = this.portrait;
-    data['landscape'] = this.landscape;
-    data['tiny'] = this.tiny;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['original'] = original;
+    data['large2x'] = large2x;
+    data['large'] = large;
+    data['medium'] = medium;
+    data['small'] = small;
+    data['portrait'] = portrait;
+    data['landscape'] = landscape;
+    data['tiny'] = tiny;
     return data;
   }
 }

@@ -16,7 +16,7 @@ class CuratedImage {
     if (json['photos'] != null) {
       photos = <Photos>[];
       json['photos'].forEach((v) {
-        photos!.add(new Photos.fromJson(v));
+        photos!.add(Photos.fromJson(v));
       });
     }
     totalResults = json['total_results'];
@@ -24,14 +24,14 @@ class CuratedImage {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['page'] = this.page;
-    data['per_page'] = this.perPage;
-    if (this.photos != null) {
-      data['photos'] = this.photos!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['page'] = page;
+    data['per_page'] = perPage;
+    if (photos != null) {
+      data['photos'] = photos!.map((v) => v.toJson()).toList();
     }
-    data['total_results'] = this.totalResults;
-    data['next_page'] = this.nextPage;
+    data['total_results'] = totalResults;
+    data['next_page'] = nextPage;
     return data;
   }
 }

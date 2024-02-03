@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:wallpye/screens/search_result_screen.dart';
 import 'package:wallpye/widget/app_bar_tittle.dart';
 import 'package:wallpye/widget/collection_list.dart';
 import 'package:wallpye/widget/image_grid.dart';
@@ -20,7 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
         msg: "Type something.",
       );
     } else {
-      Fluttertoast.showToast(msg: _queryController.text);
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => SearchResultScreen(_queryController.text),
+        ),
+      );
     }
   }
 

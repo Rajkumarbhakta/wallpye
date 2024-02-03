@@ -4,6 +4,7 @@ import 'package:wallpye/models/collection.dart';
 import 'package:wallpye/models/collection_details.dart';
 import 'package:wallpye/models/curated_image.dart';
 import 'package:http/http.dart' as http;
+import 'package:wallpye/models/search_result.dart';
 import 'package:wallpye/util/api_const.dart';
 
 class Remote {
@@ -45,6 +46,21 @@ class Remote {
     if (response.statusCode == 200) {
       final responseJson = jsonDecode(response.body) as Map<String, dynamic>;
       return CollectionDetails.fromJson(responseJson);
+    } else {
+      throw Exception("Failed to load collection media.");
+    }
+  }
+
+  static Future<SearchResult> search(
+      {int page = 1, int perPage = 20, required String query}) async {
+    final response = await http.get(
+        Uri.parse(
+            "$_BASE_URL/search?query=$query&per_page=$perPage&page=$page"),
+        headers: ApiConst.headers);
+
+    if (response.statusCode == 200) {
+      final responseJson = jsonDecode(response.body) as Map<String, dynamic>;
+      return SearchResult.fromJson(responseJson);
     } else {
       throw Exception("Failed to load collection media.");
     }

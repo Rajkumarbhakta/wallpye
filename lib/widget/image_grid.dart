@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:wallpye/data/remote.dart';
+import 'package:wallpye/models/curated_image.dart';
 import 'package:wallpye/models/photos.dart';
 import 'package:wallpye/screens/image_preview_screen.dart';
 import 'package:wallpye/widget/image_widget.dart';
 
 class ImageGrid extends StatefulWidget {
-  const ImageGrid({super.key});
+  const ImageGrid({super.key,});
   @override
   State<ImageGrid> createState() => _ImageGridState();
 }
@@ -32,7 +33,7 @@ class _ImageGridState extends State<ImageGrid> {
       if (isLastPage) {
         _pagingController.appendLastPage(newItems.photos!);
       } else {
-        final nextPageKey = pageKey + newItems.photos!.length;
+        final int nextPageKey = pageKey + newItems.photos!.length;
         _pagingController.appendPage(newItems.photos!, nextPageKey);
       }
     } catch (e) {

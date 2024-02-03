@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wallpye/data/remote.dart';
 import 'package:wallpye/models/collections.dart';
+import 'package:wallpye/screens/collection_images_screen.dart';
 import 'package:wallpye/widget/collection_widget.dart';
 
 class CollectionList extends StatefulWidget {
@@ -16,7 +17,7 @@ class _CollectionListState extends State<CollectionList> {
 
   Future<void> _fetchCollections() async {
     try {
-      final collectionList = await Remote.collectionList();
+      final collectionList = await Remote.collectionList(perPage: 10);
       setState(() {
         collections.addAll(collectionList.collections!);
       });
@@ -40,7 +41,17 @@ class _CollectionListState extends State<CollectionList> {
         itemCount: collections.isEmpty ? 0 : collections.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: ((context, index) {
-          return CollectionWidget(collections[index]);
+          return CollectionWidget(
+            collection: collections[index],
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) =>
+                      CollectionImagesScreen(collections[index]),
+                ),
+              );
+            },
+          );
         }),
       ),
     );

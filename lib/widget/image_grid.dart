@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:wallpye/data/remote.dart';
-import 'package:wallpye/models/curated_image.dart';
 import 'package:wallpye/models/photos.dart';
 import 'package:wallpye/screens/image_preview_screen.dart';
 import 'package:wallpye/widget/image_widget.dart';

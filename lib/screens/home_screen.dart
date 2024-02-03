@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wallpye/widget/app_bar_tittle.dart';
+import 'package:wallpye/widget/collection_list.dart';
 import 'package:wallpye/widget/image_grid.dart';
 import 'package:wallpye/widget/search_bar.dart';
 
@@ -34,6 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
           SearchBarCustom(
             onSearch: onSearch,
             queryController: _queryController,
+          ),
+          SizedBox(
+            height: 100,
+            child: const Flexible(child: CollectionList()),
           ),
           const Expanded(
             child: ImageGrid(),

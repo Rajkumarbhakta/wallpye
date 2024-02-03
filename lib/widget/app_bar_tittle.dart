@@ -10,8 +10,17 @@ class AppBarTittle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-      Text("Wall",style: GoogleFonts.rubik(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.black),),
-      Text("Pye",style: GoogleFonts.rubik(fontWeight: FontWeight.bold,fontSize: 20,color: chryslerBlue),)
-    ],);
+        Text(
+          "Wall",
+          style: GoogleFonts.rubik(
+              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+        ),
+        Text(
+          "Pye",
+          style: GoogleFonts.rubik(
+              fontWeight: FontWeight.bold, fontSize: 20, color: chryslerBlue),
+        )
+      ],
+    );
   }
 }

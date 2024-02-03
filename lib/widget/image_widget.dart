@@ -3,7 +3,7 @@ import 'package:transparent_image/transparent_image.dart';
 import 'package:wallpye/models/photos.dart';
 
 class ImageWidget extends StatelessWidget {
-  const ImageWidget({super.key,required this.onTap,required this.photo});
+  const ImageWidget({super.key, required this.onTap, required this.photo});
   final Photos photo;
   final Function() onTap;
 

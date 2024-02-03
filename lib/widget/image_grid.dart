@@ -49,7 +49,8 @@ class _ImageGridState extends State<ImageGrid> {
         builderDelegate: PagedChildBuilderDelegate<Photos>(
           itemBuilder: (context, item, index) => ImageWidget(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ImagePreviewScreen(item)));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ImagePreviewScreen(item)));
             },
             photo: item,
           ),

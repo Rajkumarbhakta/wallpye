@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:path_provider/path_provider.dart';
@@ -9,7 +8,6 @@ import 'package:wallpye/models/collection.dart';
 import 'package:wallpye/models/collection_details.dart';
 import 'package:wallpye/models/curated_image.dart';
 import 'package:http/http.dart' as http;
-import 'package:wallpye/models/photos.dart';
 import 'package:wallpye/models/search_result.dart';
 import 'package:wallpye/util/api_const.dart';
 

@@ -40,6 +40,8 @@ dependencies:
   fluttertoast: ^8.2.4
   transparent_image: ^2.0.1
   http: ^1.2.0
+  flutter_file_dialog: ^3.0.2
+  path_provider: ^2.1.2
 
 dev_dependencies:
   flutter_test:

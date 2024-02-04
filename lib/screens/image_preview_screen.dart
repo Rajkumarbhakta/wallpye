@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:wallpye/data/remote.dart';
 import 'package:wallpye/models/photos.dart';
 import 'package:wallpye/theme/colors.dart';
 
@@ -38,7 +40,15 @@ class ImagePreviewScreen extends StatelessWidget {
             Positioned(
               bottom: 50,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await Remote.saveImage(
+                      url: photos.src!.original!,
+                      fileName: photos.alt!.isEmpty || photos.alt == null
+                          ? "Image"
+                          : photos.alt!);
+
+                  //Fluttertoast.showToast(msg: "Downloaded.");
+                },
                 child: Text(
                   "Save",
                   style: GoogleFonts.lato(

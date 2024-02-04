@@ -5,7 +5,9 @@ import 'package:wallpye/theme/colors.dart';
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(const Duration(milliseconds: 300));
   runApp(const MyApp());
 }
 

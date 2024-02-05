@@ -46,29 +46,27 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             height: 40,
             margin: const EdgeInsets.symmetric(horizontal: 16),
-            child: Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Collections",
-                    style: GoogleFonts.lato(
-                        fontWeight: FontWeight.bold, fontSize: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Collections",
+                  style: GoogleFonts.lato(
+                      fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => const CollectionScreen()),
+                    );
+                  },
+                  child: Text(
+                    "see all",
+                    style: GoogleFonts.lato(),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => const CollectionScreen()),
-                      );
-                    },
-                    child: Text(
-                      "see all",
-                      style: GoogleFonts.lato(),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           const SizedBox(

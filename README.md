@@ -1,16 +1,36 @@
-# wallpye
+# WallPye
 
-A new Flutter project.
+A flutter application that shows images from [Pexels API](https://www.pexels.com/api/).
 
-## Getting Started
+# Tech Stack and Libraries
 
-This project is a starting point for a Flutter application.
+- [Flutter](https://flutter.dev/) : Flutter is Google’s UI toolkit for building beautiful, natively compiled
+  applications for mobile, web, and desktop from a single codebase.
+- [Dart](https://dart.dev/) : Dart is a client-optimized language for fast apps on any platform.
+- [Google Fonts](https://pub.dev/packages/google_fonts) : Google Fonts package for Flutter.
+- [Infinite Scroll Pagination](https://pub.dev/packages/infinite_scroll_pagination): A Flutter package for paginating
+  through data in a listview or gridview.
+- [Flutter Toast](https://pub.dev/packages/fluttertoast) : A Flutter toast package.
+- [Transparent Image](https://pub.dev/packages/transparent_image) : A transparent image package for Flutter.
+- [Http](https://pub.dev/packages/http) : A composable, multi-platform, Future-based API for HTTP requests.
+- [Path Provider](https://pub.dev/packages/path_provider) : A Flutter plugin for finding commonly used locations on the
+  filesystem.
 
-A few resources to get you started if this is your first Flutter project:
+# Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+|                          Home                           |                             Collections                              |                                 Collection Images                                 |
+|:-------------------------------------------------------:|:--------------------------------------------------------------------:|:---------------------------------------------------------------------------------:|
+| <img alt="Home" src="screenshot/home.png" width="250"/> | <img alt="Collection" src="screenshot/collections.png" width="250"/> | <img alt="Collection Images" src="screenshot/collection-photos.png" width="250"/> |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+|                               Search Result                               |                          Preview                           |
+|:-------------------------------------------------------------------------:|:----------------------------------------------------------:|
+| <img alt="Search Result" src="screenshot/search-result.png" width="250"/> | <img alt="Home" src="screenshot/preview.png" width="250"/> |
+
+
+# Getting Started
+
+- Clone the repository.
+- Run `flutter pub get` to install the required dependencies.
+- Run `flutter run` to start the application.
+
+
